@@ -1,0 +1,23 @@
+[user]
+	name = Les Orchard
+	email = me@lmorchard.com
+[core]
+    whitespace = -trailing-space
+[color]
+	ui = auto
+	diff = auto
+	status = auto
+	branch = auto
+	interactive = auto
+[pack]
+	threads = 0
+[diff]
+	renamelimit = 0
+[alias]
+    st = -p status
+    ci = commit
+    br = branch
+    co = checkout
+    df = diff
+	lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset'
+    cp = cherry-pick

@@ -1,0 +1,54 @@
+Protocol 2,1
+
+Host prgmr
+    User lmorchard
+    Hostname lmorchard.xen.prgmr.com
+
+Host tank
+    User root
+    Hostname 192.168.123.250
+    ForwardAgent yes
+
+Host hg.mozilla.org
+    User lorchard@mozilla.com
+
+Host a2
+    Hostname 66.103.254.157
+    Port 7822
+    User lorchard
+
+Host people
+    User lorchard
+    Hostname people.mozilla.org
+    ForwardAgent yes
+
+Host moz-mpt
+    HostName mpt-vpn.mozilla.com
+    User lorchard
+    ForwardAgent yes
+
+Host home
+    Hostname deus-x.dyndns.org
+    Port 2202
+    User root
+    DynamicForward 1080
+    RemoteForward 8090 localhost:8090
+    LocalForward 15001 192.168.123.250:5001
+    LocalForward 10548 192.168.123.250:548
+    LocalForward 9090 192.168.123.254:80
+    LocalForward 57000 192.168.123.169:57000
+    LocalForward 5910 192.168.123.240:5900
+    LocalForward 5920 192.168.123.169:5900
+    LocalForward 3128 192.168.123.250:3128
+    LocalForward 8760 192.168.123.169:8760
+    LocalForward 5000 192.168.123.169:5000
+    LocalForward 2022 192.168.123.169:22
+    LocalForward 2023 192.168.123.202:22
+    LocalForward 15337 192.168.123.169:5337
+    LocalForward 6884 192.168.123.169:6884
+    LocalForward 6883 192.168.123.169:6883
+    LocalForward 6886 192.168.123.169:6886
+    LocalForward 9091 192.168.123.250:9091
+    LocalForward 8083 192.168.123.169:80
+    LocalForward 9080 192.168.123.169:8080
+    LocalForward 3689 192.168.123.250:3689
