@@ -27,7 +27,7 @@ ZSH_THEME="robbyrussell"
 # DISABLE_AUTO_TITLE="true"
 
 # Uncomment following line if you want red dots to be displayed while waiting for completion
-# COMPLETION_WAITING_DOTS="true"
+COMPLETION_WAITING_DOTS="true"
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
@@ -37,9 +37,12 @@ plugins=(git)
 source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
-export PATH=node_modules/.bin:$HOME/.local/bin:$HOME/Applications:/Applications:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin
+export PATH=node_modules/.bin:$HOME/.local/bin:/usr/local/bin:$HOME/Applications:/Applications:/usr/bin:/bin:/usr/sbin:/sbin
 export MANPATH=$HOME/.local/man:/opt/local/man:/usr/local/man:$MANPATH
 export LC_CTYPE=en_US.UTF-8
-export EDITOR='/Users/lorchard/Applications/MacVim.app/Contents/MacOS/Vim -g -c "au VimLeave * maca hide:" -f'
+export EDITOR='/Applications/MacVim.app/Contents/MacOS/Vim -g -c "au VimLeave * maca hide:" -f'
 export CLICOLOR=y
 export LESS='-XRF'
+unsetopt INC_APPEND_HISTORY
+setopt APPEND_HISTORY
+

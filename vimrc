@@ -78,9 +78,9 @@ let g:miniBufExplSplitBelow=0
 let g:miniBufExplUseSingleClick = 0
 
 
-map <C-f> :FuzzyFinderFile<CR>
-map <C-c> :FuzzyFinderDir<CR>
-map <C-g> :FuzzyFinderBuffer<CR>
+map <C-f> :FufFile<CR>
+map <C-c> :FufDir<CR>
+map <C-g> :FufBuffer<CR>
 map <C-a> :BufExplorer<CR>
 
 noremap <D-\> :NERDTreeToggle<CR>
