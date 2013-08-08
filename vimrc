@@ -23,6 +23,8 @@ Bundle 'FuzzyFinder'
 Bundle 'bufexplorer.zip'
 " non github repos
 "Bundle 'git://git.wincent.com/command-t.git'
+Bundle 'vim-coffee-script'
+Bundle 'vim-stylus'
 
 filetype plugin indent on     " required!
 "

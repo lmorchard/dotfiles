@@ -1,4 +1,4 @@
-export PATH=node_modules/.bin:$HOME/.local/bin:$HOME/Applications:/Applications:/usr/local/sbin:/Developer/usr/bin:/usr/local/Cellar/ccache/3.1.8/libexec:$PATH
+export PATH=node_modules/.bin:$HOME/.local/bin:$HOME/Applications:/Applications:/usr/local/sbin:/Developer/usr/bin:/usr/local/Cellar/ccache/3.1.8/libexec:$HOME/.local/adt-bundle-mac-x86_64-20130522/sdk/platform-tools/:$PATH
 export MANPATH=$HOME/.local/man:/opt/local/man:/usr/local/man:$MANPATH 
 export LC_CTYPE=en_US.UTF-8
 export VIM_APP_DIR=$HOME/Applications

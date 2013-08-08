@@ -1,5 +1,9 @@
 Protocol 2,1
 
+Host lmo-pi-1
+    Hostname lmo-pi-1.local
+    User pi
+
 Host cm-vpn01
     Hostname cm-vpn01.mozilla.org
     User lorchard
@@ -19,6 +23,7 @@ Host mdn-prod3
 Host prgmr
     User lmorchard
     Hostname lmorchard.xen.prgmr.com
+    LocalForward 6984 127.0.0.1:5984
 
 Host tank
     User root
@@ -46,7 +51,7 @@ Host moz-mpt
 Host home
     Hostname deus-x.dyndns.org
     Port 2202
-    User root
+    User admin
     DynamicForward 1080
     RemoteForward 8090 localhost:8090
     LocalForward 15001 192.168.123.250:5001

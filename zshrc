@@ -43,6 +43,11 @@ export LC_CTYPE=en_US.UTF-8
 export EDITOR='/Applications/MacVim.app/Contents/MacOS/Vim -g -c "au VimLeave * maca hide:" -f'
 export CLICOLOR=y
 export LESS='-XRF'
+
+unsetopt SHARE_HISTORY
 unsetopt INC_APPEND_HISTORY
 setopt APPEND_HISTORY
 
+
+### Added by the Heroku Toolbelt
+export PATH="/usr/local/heroku/bin:$PATH"
