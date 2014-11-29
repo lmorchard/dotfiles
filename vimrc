@@ -24,7 +24,9 @@ Bundle 'bufexplorer.zip'
 " non github repos
 "Bundle 'git://git.wincent.com/command-t.git'
 Bundle 'vim-coffee-script'
+Bundle 'vim-javascript-syntax'
 Bundle 'vim-stylus'
+Bundle 'editorconfig'
 
 filetype plugin indent on     " required!
 "
@@ -43,7 +45,7 @@ colorscheme deusx
 highlight Folded guibg=#222200 guifg=#cccccc
 highlight FoldColumn guibg=#222200 guifg=#cccccc
 set foldcolumn=5
-set foldlevelstart=1
+set foldlevelstart=99
 
 set enc=utf-8
 set guioptions-=T
@@ -51,7 +53,7 @@ set guioptions-=T
 "set guioptions-=r
 set guioptions-=L
 set guioptions-=R
-set guifont=Inconsolata:h12
+set guifont=Inconsolata\ Medium\ 11
 set wrapscan
 set ignorecase
 set number
@@ -79,6 +81,7 @@ let g:miniBufExplVSplit=30
 let g:miniBufExplSplitBelow=0
 let g:miniBufExplUseSingleClick = 0
 
+let javaScript_fold=1
 
 map <C-f> :FufFile<CR>
 map <C-c> :FufDir<CR>
@@ -107,3 +110,5 @@ map <D-M-Right> :tabn<CR>
 map <D-M-Left> :tabp<CR>
 imap <D-M-Right> <C-o>:tabn<CR>
 imap <D-M-Left> <C-o>:tabp<CR>
+
+au FileType javascript call JavaScriptFold()

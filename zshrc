@@ -45,8 +45,8 @@ export CLICOLOR=y
 export LESS='-XRF'
 
 unsetopt SHARE_HISTORY
-unsetopt INC_APPEND_HISTORY
-setopt APPEND_HISTORY
+setopt INC_APPEND_HISTORY
+unsetopt APPEND_HISTORY
 
 
 ### Added by the Heroku Toolbelt
