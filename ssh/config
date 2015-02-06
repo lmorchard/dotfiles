@@ -51,7 +51,7 @@ Host moz-mpt
 Host home
     Hostname deus-x.dyndns.org
     Port 2202
-    User admin
+    User lmorchard
     DynamicForward 1080
     RemoteForward 8090 localhost:8090
     LocalForward 15001 192.168.123.250:5001

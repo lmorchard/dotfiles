@@ -36,18 +36,4 @@ plugins=(git)
 
 source $ZSH/oh-my-zsh.sh
 
-# Customize to your needs...
-export PATH=node_modules/.bin:$HOME/.local/bin:/usr/local/bin:$HOME/Applications:/Applications:/usr/bin:/bin:/usr/sbin:/sbin
-export MANPATH=$HOME/.local/man:/opt/local/man:/usr/local/man:$MANPATH
-export LC_CTYPE=en_US.UTF-8
-export EDITOR='/Applications/MacVim.app/Contents/MacOS/Vim -g -c "au VimLeave * maca hide:" -f'
-export CLICOLOR=y
-export LESS='-XRF'
-
-unsetopt SHARE_HISTORY
-setopt INC_APPEND_HISTORY
-unsetopt APPEND_HISTORY
-
-
-### Added by the Heroku Toolbelt
-export PATH="/usr/local/heroku/bin:$PATH"
+source $HOME/.profile

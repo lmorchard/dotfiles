@@ -26,7 +26,7 @@ Bundle 'bufexplorer.zip'
 Bundle 'vim-coffee-script'
 Bundle 'vim-javascript-syntax'
 Bundle 'vim-stylus'
-Bundle 'editorconfig'
+Bundle 'editorconfig-vim'
 
 filetype plugin indent on     " required!
 "
