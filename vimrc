@@ -45,7 +45,7 @@ colorscheme deusx
 highlight Folded guibg=#222200 guifg=#cccccc
 highlight FoldColumn guibg=#222200 guifg=#cccccc
 set foldcolumn=5
-set foldlevelstart=99
+"set foldlevelstart=99
 
 set enc=utf-8
 set guioptions-=T
@@ -53,7 +53,6 @@ set guioptions-=T
 "set guioptions-=r
 set guioptions-=L
 set guioptions-=R
-set guifont=Inconsolata\ Medium\ 11
 set wrapscan
 set ignorecase
 set number
@@ -112,3 +111,11 @@ imap <D-M-Right> <C-o>:tabn<CR>
 imap <D-M-Left> <C-o>:tabp<CR>
 
 au FileType javascript call JavaScriptFold()
+
+if has("mac")
+    set guifont=Inconsolata:h12
+elseif has("unix")
+    set guifont=Inconsolata\ Medium\ 9
+elseif has("win32")
+    set guifont=Consolas:h10:cANSI
+endif
