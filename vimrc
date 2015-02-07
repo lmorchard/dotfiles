@@ -45,7 +45,7 @@ colorscheme deusx
 highlight Folded guibg=#222200 guifg=#cccccc
 highlight FoldColumn guibg=#222200 guifg=#cccccc
 set foldcolumn=5
-"set foldlevelstart=99
+set foldlevelstart=99
 
 set enc=utf-8
 set guioptions-=T
