@@ -1,34 +1,33 @@
 [submodule "vim/bundle/vundle"]
-	path = vim/bundle/vundle
-	url = https://github.com/gmarik/vundle.git
+    path = .vim/bundle/vundle
+    url = https://github.com/gmarik/vundle.git
 [submodule "vim/bundle/vim-fugitive"]
-	path = vim/bundle/vim-fugitive
-	url = https://github.com/tpope/vim-fugitive.git
+    path = .vim/bundle/vim-fugitive
+    url = https://github.com/tpope/vim-fugitive.git
 [submodule "vim/bundle/nerdtree"]
-    path = vim/bundle/nerdtree
+    path = .vim/bundle/nerdtree
     url = https://github.com/scrooloose/nerdtree.git
 [submodule "vim/bundle/bufexplorer.zip"]
-    path = vim/bundle/bufexplorer.zip
+    path = .vim/bundle/bufexplorer.zip
     url = https://github.com/vim-scripts/bufexplorer.zip.git
 [submodule "vim/bundle/FuzzyFinder"]
-    path = vim/bundle/FuzzyFinder
+    path = .vim/bundle/FuzzyFinder
     url = https://github.com/vim-scripts/FuzzyFinder.git
 [submodule "vim/bundle/L9"]
-    path = vim/bundle/L9
+    path = .vim/bundle/L9
     url = https://github.com/vim-scripts/L9.git
-
 [submodule "vim/bundle/supertab"]
-	path = vim/bundle/supertab
-	url = git://github.com/ervandew/supertab.git
+    path = .vim/bundle/supertab
+    url = git://github.com/ervandew/supertab.git
 [submodule "vim/bundle/vim-coffee-script"]
-	path = vim/bundle/vim-coffee-script
-	url = https://github.com/kchmck/vim-coffee-script.git
+    path = .vim/bundle/vim-coffee-script
+    url = https://github.com/kchmck/vim-coffee-script.git
 [submodule "vim/bundle/vim-stylus"]
-	path = vim/bundle/vim-stylus
-	url = https://github.com/wavded/vim-stylus.git
+    path = .vim/bundle/vim-stylus
+    url = https://github.com/wavded/vim-stylus.git
 [submodule "vim/bundle/vim-javascript-syntax"]
-	path = vim/bundle/vim-javascript-syntax
-	url = https://github.com/jelera/vim-javascript-syntax.git
+    path = .vim/bundle/vim-javascript-syntax
+    url = https://github.com/jelera/vim-javascript-syntax.git
 [submodule "vim/bundle/editorconfig-vim"]
-	path = vim/bundle/editorconfig-vim
-	url = git@github.com:editorconfig/editorconfig-vim.git
+    path = .vim/bundle/editorconfig-vim
+    url = git@github.com:editorconfig/editorconfig-vim.git
