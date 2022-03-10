@@ -42,3 +42,5 @@ export SKYRISE_PATH=/workspaces/actions/actions-dotnet/src
 alias start-actions='/workspaces/github/script/actions/start-actions'
 alias stop-actions='/workspaces/github/script/actions/stop-actions'
 alias skyrise='cd /workspaces/actions/actions-dotnet/src && ./init.sh'
+
+test -f ~/.git-completion.bash && . $_
