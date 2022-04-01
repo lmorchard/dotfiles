@@ -1,13 +1,4 @@
 # ~/.profile: executed by the command interpreter for login shells.
-# if running bash
-if [ -n "$BASH_VERSION" ]; then
-    # include .bashrc if it exists
-    if [ -f "$HOME/.bashrc" ]; then
-        . "$HOME/.bashrc"
-    fi
-    test -f ~/.git-completion.bash && . $_
-fi
-
 # set PATH so it includes user's private bin if it exists
 if [ -d "$HOME/bin" ] ; then
     PATH="$HOME/bin:$PATH"
@@ -18,3 +9,28 @@ if [ -d "$HOME/.local/bin" ] ; then
     PATH="$HOME/.local/bin:$PATH"
 fi
 
+# if running bash
+if [ -n "$BASH_VERSION" ]; then
+    # include .bashrc if it exists
+    if [ -f "$HOME/.bashrc" ]; then
+        . "$HOME/.bashrc"
+    fi
+    test -f ~/.git-completion.bash && . $_
+
+    # https://coderwall.com/p/fasnya/add-git-branch-name-to-bash-prompt
+    __parse_git_branch() {
+         git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
+    }
+
+    # Codespaces bash prompt theme
+    __lmorchard_bash_prompt() {
+        local userpart='`export XIT=$? \
+            && [ ! -z "${GITHUB_USER}" ] && echo -n "\[\033[0;32m\]@${GITHUB_USER} " || echo -n "\[\033[0;32m\]\u " \
+            && [ "$XIT" -ne "0" ] && echo -n "\[\033[1;31m\]➜" || echo -n "\[\033[0m\]➜"`'
+        local lightblue='\[\033[1;34m\]'
+        local removecolor='\[\033[0m\]'
+        PS1="${userpart} ${lightblue}\w${removecolor}\[\033[33m\]\$(__parse_git_branch)\[\033[00m\] \$ "
+        unset -f __lmorchard_bash_prompt
+    }
+    __lmorchard_bash_prompt
+fi
