@@ -12,4 +12,4 @@ for dotfile in $dotfiles_root/.*; do
     ln -sf $dotfile $HOME/$(basename $dotfile)
 done
 
-echo ". $HOME/.bashrc-mine" >> $HOME/.bashrc
+echo ". $HOME/.lmorchard-shell-tweaks" >> $HOME/.bashrc
