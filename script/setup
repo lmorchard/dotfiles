@@ -1,0 +1,15 @@
+#!/bin/bash
+dotfiles_root=$(realpath $(dirname $0)/..)
+
+for dotfile in $dotfiles_root/.*; do
+    if [[ $dotfile = "$dotfiles_root/." ]] ||
+        [[ $dotfile = "$dotfiles_root/.." ]] ||
+        [[ $dotfile = "$dotfiles_root/.git" ]] ||
+        [[ $dotfile = "$dotfiles_root/.gitignore" ]]
+    then
+        continue
+    fi
+    ln -sf $dotfile $HOME/$(basename $dotfile)
+done
+
+echo ". $HOME/.bashrc-mine" >> $HOME/.bashrc
