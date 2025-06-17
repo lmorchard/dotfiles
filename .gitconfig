@@ -1,6 +1,7 @@
 [user]
     name = Les Orchard
-    email = lmorchard@github.com
+    email = lorchard@mozilla.com
+    # signingkey = ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIIb6nyyiCVKrqpN7dCKINYKQ5pmibItXssK4Hv+XsQxY lorchard@Lucien.local
     # email = me@lmorchard.com
 [core]
     whitespace = -trailing-space
@@ -20,7 +21,7 @@
     br = branch
     co = checkout
     df = diff
-    lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset'
+	lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --branches
     cp = cherry-pick
 [push]
     default = simple
@@ -30,3 +31,11 @@
 	smudge = git-lfs smudge -- %f
 	process = git-lfs filter-process
 	required = true
+[init]
+	defaultBranch = main
+[gpg "ssh"]
+	allowedSignersFile = /Users/lorchard/.ssh/allowed_signers
+#[commit]
+#	gpgsign = true
+#[gpg]
+#	format = ssh
