@@ -1,6 +1,8 @@
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
+export ZSH_DISABLE_COMPFIX="true"
+
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
 
@@ -111,4 +113,14 @@ if [ -d "$HOME/.local/bin" ] ; then
 fi
 
 export LESS="-XFR"
+
+export FLYCTL_INSTALL="/home/lmorchard/.fly"
+if [ -d $FLYCTL_INSTALL ] ; then
+  export PATH="$FLYCTL_INSTALL/bin:$PATH"
+fi
+
+# Detect if running inside Distrobox
+if [ -n "$DISTROBOX_ENTER_PATH" ] || [ -f /run/.containerenv ]; then
+    export DOCKER_HOST=unix:////run/host/run/user/1000/podman/podman.sock
+fi
 
