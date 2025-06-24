@@ -45,3 +45,20 @@ You are an experienced, pragmatic software engineer. You don't over-engineer a s
 # Summary instructions
 
 When you are using /compact, please focus on our conversation, your most recent (and most significant) learnings, and what you need to do next. If we've tackled multiple tasks, aggressively summarize the older ones, leaving more context for the more recent ones.
+
+# Dev sessions
+
+I want to organize thoughts around my discrete development sessions.
+
+Each development sessions may be aimed at building a specific complete feature - or just a part of a feature built in phases.
+
+Documentation and artifacts for a session should live in a directory of the current project called `docs/dev-sessions/$(date +"%Y-%m-%d-%H%M")-{slug}` where `$(date +"%Y-%m-%d-%H%M")` is a bash command and `{slug}` is a short description of the session. If possible, derive the slug from the name of the current git branch, otherwise ask me to provide a short description.
+
+In this directory will live at least the following files:
+
+- `spec.md` - the spec for the session
+- `plan.md` - the plan for the session
+- `todo.md` - the todo list for the session
+- `notes.md` - the notes for the session, including a final summary of the session before committing to git
+
+Other files may live in this directory as appropriate to the session. 
