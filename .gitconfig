@@ -39,3 +39,5 @@
 #	gpgsign = true
 #[gpg]
 #	format = ssh
+[credential]
+	helper = "!f() { /home/lmorchard/.vscode-server/bin/dfaf44141ea9deb3b4096f7cd6d24e00c147a4b1/node /tmp/vscode-remote-containers-6289a4cf-e17e-4ee4-bcbf-c9bb6f4cd87e.js git-credential-helper $*; }; f"
