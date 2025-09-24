@@ -7,5 +7,3 @@ From here you should have the foundation to provide a series of prompts for a co
 Make sure and separate each prompt section. Use markdown. The goal is to output prompts, but context, etc is important as well.
 
 Store the plan in plan.md.
-
-Then, update todo.md with a succinct checklist of phased steps to implement the plan.

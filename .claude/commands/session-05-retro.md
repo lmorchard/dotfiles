@@ -1,4 +1,4 @@
-I want to end the current dev session and perform a retrospective on it.
+I want to end or pause the current dev session and perform a retrospective on it.
 
 Think carefully about our session so far and write notes on a complete summary of our session.
 
