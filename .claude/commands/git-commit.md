@@ -1,15 +1,13 @@
-Please review ALL uncommitted changes in this git repository.
-
 Be sure you are in the root directory of the current project. DO NOT OPERATE FROM A SUBDIRECTORY.
 
-Use `git status` and `git diff` to be sure you've found ALL uncommitted changes.
+Review and consider ALL uncommitted and staged changes in the current git repository using `git status` and `git diff`.
 
-Stage ALL changes (tracked and untracked), compose a detailed commit message, and commit everything that's not already committed.
-Compose a detailed message and commit. Then run git status to verify no uncommitted changes remain.
+Compose a descriptive git commit message that covers all pending changes.
 
-IF YOU HAVE MISSED ANY UNCOMMITTED OR UNSTAGED FILES, REVIEW THEM, ADD THEM, AND AMEND THE COMMIT DESCRIPTION TO INCLUDE THEM.
+Stage ALL changes (tracked and untracked) and commit with the message. Then run `git status` to verify no uncommitted changes remain.
 
-DO NOT BE SELECTIVE WITH RESPECT TO RECENT ACTIVITY - INCLUDE *ALL* UNCOMMITTED CHANGES.
+IF YOU HAVE MISSED ANY UNCOMMITTED OR UNSTAGED FILES, REVIEW THEM, ADD THEM, AND CREATE A NEW COMMIT.
 
-DO NOT PUSH THE CHANGES - ONLY COMMIT LOCALLY. I will review and possibly make further revisions and amendments.
+DO NOT BE SELECTIVE - INCLUDE *ALL* UNCOMMITTED CHANGES.
 
+ONLY COMMIT, DO NOT PUSH. I will review and possibly make further revisions.

@@ -1,8 +1,8 @@
 [user]
     name = Les Orchard
-    email = lorchard@mozilla.com
+    # email = lorchard@mozilla.com
     # signingkey = ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIIb6nyyiCVKrqpN7dCKINYKQ5pmibItXssK4Hv+XsQxY lorchard@Lucien.local
-    # email = me@lmorchard.com
+    email = me@lmorchard.com
 [core]
     whitespace = -trailing-space
 [color]
@@ -40,4 +40,4 @@
 #[gpg]
 #	format = ssh
 [credential]
-	helper = "!f() { /home/lmorchard/.vscode-server/bin/dfaf44141ea9deb3b4096f7cd6d24e00c147a4b1/node /tmp/vscode-remote-containers-6289a4cf-e17e-4ee4-bcbf-c9bb6f4cd87e.js git-credential-helper $*; }; f"
+	helper = "!f() { /home/lmorchard/.vscode-server/bin/cfbea10c5ffb233ea9177d34726e6056e89913dc/node /tmp/vscode-remote-containers-303ccd67-b448-4767-8203-bfa08199099b.js git-credential-helper $*; }; f"
