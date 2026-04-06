@@ -77,19 +77,20 @@ Execute the plan for the current dev session.
 
 ## pr
 
-Squash, push, open a PR, and run Copilot review.
+Self-review, squash, push, open a PR, and run Copilot review.
 
-1. Squash all commits on the branch into one with a comprehensive message.
-2. Push the branch to remote.
-3. Open a PR with summary, test plan, and `Closes #N` references.
-4. Request a review from GitHub Copilot: `gh pr edit <number> --add-reviewer copilot-pull-request-reviewer`
-5. Poll for new review comments. Use `gh api repos/{owner}/{repo}/pulls/{number}/comments --jq 'length'` to check, retrying a few times with short waits. Give up after 10 minutes.
-6. Assess each Copilot comment:
+1. **Self-review first**: Review `git diff origin/main..HEAD` for bugs, incomplete changes, edge cases, test gaps, convention violations, and doc gaps. Fix anything found before proceeding.
+2. Squash all commits on the branch into one with a comprehensive message.
+3. Push the branch to remote.
+4. Open a PR with summary, test plan, and `Closes #N` references.
+5. Request a review from GitHub Copilot: `gh pr edit <number> --add-reviewer copilot-pull-request-reviewer`
+6. Poll for new review comments. Use `gh api repos/{owner}/{repo}/pulls/{number}/comments --jq 'length'` to check, retrying a few times with short waits. Give up after 10 minutes.
+7. Assess each Copilot comment:
    - **Fix**: real bugs, valid edge cases, missing error handling, doc/code mismatches, missing test coverage
    - **Skip**: over-engineering, theoretical concerns without real risk, style nitpicks
-7. Fix worthwhile comments. Lint, test, commit.
-8. Squash again and force-push.
-9. Report the PR URL, what was fixed, and what was skipped.
+8. Fix worthwhile comments. Lint, test, commit.
+9. Squash again and force-push.
+10. Report the PR URL, what was fixed, and what was skipped.
 
 ---
 
@@ -157,7 +158,14 @@ Check plan against spec for missing steps, orphaned code, incorrect ordering. Fi
 For each step: implement → `make lint` → `make test` → `make check` → commit.
 
 #### 3e. Branch self-review
-Review `git diff origin/main..HEAD` for bugs, unused imports, missing tests, doc gaps, typecheck issues. Fix anything found.
+Review `git diff origin/main..HEAD` thoroughly. Check for:
+- **Bugs introduced**: wrong logic, missing imports, changed behavior unintentionally
+- **Incomplete changes**: renamed something in one place but missed another, removed a function but left callers
+- **Edge cases**: hidden files/dirs not filtered, path traversal, off-by-one, empty inputs
+- **Test gaps**: new behavior without tests, changed behavior that existing tests don't cover
+- **Convention violations**: bare error strings, imports inside functions, undeclared attributes
+- **Doc gaps**: new config options not documented, CLAUDE.md key files list stale
+Fix anything found. This catches issues that Copilot often misses (and vice versa).
 
 #### 3f. Squash and PR
 Squash all commits into one. Push branch. Open PR with summary, test plan, `Closes #N`. Report PR URL.
