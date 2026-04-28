@@ -1,4 +1,4 @@
-Be sure you are in the root directory of the current project. DO NOT OPERATE FROM A SUBDIRECTORY.
+Be sure you are at the root of the current working tree — either the main project checkout, or a git worktree for it (e.g. `.claude/worktrees/{branch-name}/`). Both count as a project root. DO NOT OPERATE FROM A SUBDIRECTORY inside either one. If in doubt, run `git rev-parse --show-toplevel` and `cd` to that path before continuing.
 
 Review and consider ALL uncommitted and staged changes in the current git repository using `git status` and `git diff`.
 

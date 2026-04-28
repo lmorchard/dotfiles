@@ -19,6 +19,8 @@ Session docs live in `docs/dev-sessions/$(date +"%Y-%m-%d-%H%M")-{slug}/` with `
 
 Always fetch and rebase from origin/main before creating new branches.
 
+**Prefer worktrees for session work.** Whenever possible, do session work in a new git worktree at `.claude/worktrees/{branch-name}/` (relative to the project root) rather than switching branches in-place. This isolates the session from the main checkout, so the user can keep other work running (dev servers, editors, other sessions) without interference. Each worktree typically needs its own virtualenv / dependency install — set that up after creating it. Fall back to an in-place branch switch only if the project can't support a worktree (uncommitted changes that must stay visible, tooling that requires a fixed path, etc.) or the user asks for it.
+
 ---
 
 ## start
@@ -27,10 +29,10 @@ Start or resume a dev session.
 
 1. Check the current git branch. If on main, ask for a branch name or derive from context (e.g., from a GitHub issue URL if provided as an extra argument).
 2. If a GitHub issue URL is provided, fetch it for context and use it to derive the branch name.
-3. Fetch and rebase from origin/main, then create the feature branch.
+3. Fetch and rebase from origin/main, then create the feature branch — **preferably as a new worktree at `.claude/worktrees/{branch-name}/`** (see Shared conventions). Set up a per-worktree venv / dependency install as needed. `cd` into the worktree for the rest of the session.
 4. Check if a session directory already exists for this branch. If yes, read the docs for context and report status.
 5. If no session dir exists, create it with empty `spec.md`, `plan.md`, and `notes.md`.
-6. Report the session directory path. This is the current dev session until we start another or finish this one.
+6. Report the session directory path (and worktree path, if used). This is the current dev session until we start another or finish this one.
 
 ---
 
@@ -64,9 +66,11 @@ Write an implementation plan from the spec.
 
 Execute the plan for the current dev session.
 
+**Preferred: subagent-driven execution.** If the `superpowers:subagent-driven-development` skill is available, invoke it and dispatch a fresh subagent per task with review between tasks. Only fall back to inline execution when that skill isn't available or the user explicitly asks for inline.
+
 1. Read `plan.md` and `spec.md`. Confirm the plan is detailed and ready. If not, ask for more details.
 2. For each step in the plan:
-   - Implement the changes
+   - Implement the changes (via subagent per the preference above, or inline)
    - Run `make lint` (fix any issues)
    - Run `make test` (fix any failures)
    - Run `make check` if available (typecheck, etc.)
@@ -128,7 +132,7 @@ If too complex, **push back** — recommend a full interactive session (`/dev-se
 1. Fetch and read the GitHub issue thoroughly.
 2. Check the project board if configured (see CLAUDE.md). Note priority/size if set.
 3. Fetch and rebase from origin/main before creating a branch.
-4. Create a feature branch from origin/main. Derive branch name from the issue title.
+4. Create a feature branch from origin/main. Derive branch name from the issue title. **Prefer creating it as a worktree at `.claude/worktrees/{branch-name}/`** (see Shared conventions) and set up a per-worktree venv / dependency install as needed; `cd` into the worktree for the rest of the session.
 5. Create the session directory with `spec.md`, `plan.md`, `notes.md`.
 
 ### Phase 2: Brainstorm (interactive)
